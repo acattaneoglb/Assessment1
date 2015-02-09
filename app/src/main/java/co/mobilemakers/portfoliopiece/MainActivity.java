@@ -8,10 +8,31 @@ import android.view.MenuItem;
 
 public class MainActivity extends ActionBarActivity {
 
+    PictureModel pictures[];
+
+    protected void loadPictures() {
+        pictures = new PictureModel[3];
+
+        pictures[0].setName(getResources().getString(R.string.name_la_gioconda));
+        pictures[0].setImageId(R.drawable.La_Gioconda);
+        pictures[0].setThumbnailId(R.drawable.t_La_Gioconda);
+
+        pictures[1].setName(getResources().getString(R.string.name_guernica));
+        pictures[1].setImageId(R.drawable.Guernica);
+        pictures[1].setThumbnailId(R.drawable.t_Guernica);
+
+        pictures[2].setName(getResources().getString(R.string.name_skrik));
+        pictures[2].setImageId(R.drawable.Skrik);
+        pictures[2].setThumbnailId(R.drawable.t_Skrik);
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        loadPictures();
     }
 
 

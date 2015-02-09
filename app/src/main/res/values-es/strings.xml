@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="action_settings">Preferencias</string>
+    <string name="button_previous">Anterior</string>
+    <string name="button_next">Siguiente</string>
+
+    <!-- Pictures' local names -->
+    <string name="local_name_la_gioconda">La Gioconda</string>
+    <string name="local_name_guernica">Guernica</string>
+    <string name="local_name_skrik">El grito</string>
+
+</resources>

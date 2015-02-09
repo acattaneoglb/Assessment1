@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Portfolio Piece</string>
+    <string name="app_name" translatable="false">Portfolio Piece</string>
     <string name="action_settings">Settings</string>
+    <string name="button_previous">Previous</string>
+    <string name="button_next">Next</string>
+
+    <!-- Pictures' names -->
+    <string name="name_la_gioconda" translatable="false">La Gioconda</string>
+    <string name="name_guernica" translatable="false">Guernica</string>
+    <string name="name_skrik" translatable="false">Skrik</string>
+
+    <!-- Pictures' local names -->
+    <string name="local_name_la_gioconda">Mona Lisa</string>
+    <string name="local_name_guernica">Guernica</string>
+    <string name="local_name_skrik">The Scream</string>
 
 </resources>
