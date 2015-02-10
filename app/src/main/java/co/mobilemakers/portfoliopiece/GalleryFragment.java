@@ -6,7 +6,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 
 
 /**
@@ -14,23 +14,51 @@ import android.widget.ImageView;
  */
 public class GalleryFragment extends Fragment {
 
+    /**
+     * Maximum quantity of pictures in the screen.
+     */
     private final static int PICTURES_BY_SCREEN = 6;
 
-    ImageView mPictures[];
+    /**
+     * Takes account of the first picture showed on screen.
+     */
+    int firstPicture = 0;
+    /**
+     * Array of the screen's ImageButtons, for an easier access.
+     */
+    ImageButton mPictures[];
 
     public GalleryFragment() {
         // Required empty public constructor
     }
 
-
+    /**
+     * Assigns each ImageButton to an array's index.
+     * @param rootView The parent view.
+     */
     private void controlsToVars(View rootView) {
-        mPictures = new ImageView[PICTURES_BY_SCREEN];
-        mPictures[0] = (ImageView)rootView.findViewById(R.id.image_view_1);
-        mPictures[1] = (ImageView)rootView.findViewById(R.id.image_view_2);
-        mPictures[2] = (ImageView)rootView.findViewById(R.id.image_view_3);
-        mPictures[3] = (ImageView)rootView.findViewById(R.id.image_view_4);
-        mPictures[4] = (ImageView)rootView.findViewById(R.id.image_view_5);
-        mPictures[5] = (ImageView)rootView.findViewById(R.id.image_view_6);
+        mPictures = new ImageButton[PICTURES_BY_SCREEN];
+        mPictures[0] = (ImageButton)rootView.findViewById(R.id.image_view_1);
+        mPictures[1] = (ImageButton)rootView.findViewById(R.id.image_view_2);
+        mPictures[2] = (ImageButton)rootView.findViewById(R.id.image_view_3);
+        mPictures[3] = (ImageButton)rootView.findViewById(R.id.image_view_4);
+        mPictures[4] = (ImageButton)rootView.findViewById(R.id.image_view_5);
+        mPictures[5] = (ImageButton)rootView.findViewById(R.id.image_view_6);
+    }
+
+    /**
+     * Shows the correspondent picture on each ImageButton.
+     */
+    protected void showPictures() {
+        int posImage = 0;
+        GalleryActivity gallery = (GalleryActivity)getActivity();
+        int imagesCount = gallery.getPicturesQuantity();
+
+        while (posImage < PICTURES_BY_SCREEN && (firstPicture + posImage) < imagesCount) {
+            mPictures[posImage].setImageDrawable(
+                    getResources().getDrawable(gallery.getPictureThumbnailId(firstPicture + posImage)));
+            posImage++;
+        }
     }
 
     @Override
@@ -41,11 +69,13 @@ public class GalleryFragment extends Fragment {
 
         controlsToVars(rootView);
 
-
-
         return rootView;
     }
 
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
-
+        showPictures();
+    }
 }
