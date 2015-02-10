@@ -1,6 +1,7 @@
 package co.mobilemakers.portfoliopiece;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -23,10 +24,28 @@ public class GalleryFragment extends Fragment {
      * Takes account of the first picture showed on screen.
      */
     int firstPicture = 0;
+
     /**
      * Array of the screen's ImageButtons, for an easier access.
      */
     ImageButton mPictures[];
+
+    /**
+     * Inner class to deal with pictures' clicks
+     */
+    private class PictureButtonListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(getActivity(), ShowcaseActivity.class);
+            int whichPicture = 0;
+            while (v != mPictures[whichPicture]) {
+                whichPicture++;
+            }
+            GalleryActivity gallery = (GalleryActivity)getActivity();
+            intent.putExtra(GalleryActivity.EXTRA_PICTURE, gallery.getPicture(whichPicture));
+            startActivity(intent);
+        }
+    }
 
     public GalleryFragment() {
         // Required empty public constructor
@@ -47,7 +66,18 @@ public class GalleryFragment extends Fragment {
     }
 
     /**
-     * Shows the correspondent picture on each ImageButton.
+     * Sets listeners to make interaction possible
+     */
+    private void setListeners() {
+        PictureButtonListener pictureButtonListener = new PictureButtonListener();
+
+        for (ImageButton pictureButton : mPictures) {
+            pictureButton.setOnClickListener(pictureButtonListener);
+        }
+    }
+
+    /**
+     * Shows the corresponding picture on each ImageButton.
      */
     protected void showPictures() {
         int posImage = 0;
@@ -68,6 +98,7 @@ public class GalleryFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_gallery, container, false);
 
         controlsToVars(rootView);
+        setListeners();
 
         return rootView;
     }

@@ -10,6 +10,7 @@ import android.view.MenuItem;
  */
 public class GalleryActivity extends ActionBarActivity {
 
+    public final static String EXTRA_PICTURE = "EXTRA_PICTURE";
     /**
      * Array of the available pictures.
      */
@@ -31,6 +32,10 @@ public class GalleryActivity extends ActionBarActivity {
      */
     public int getPictureThumbnailId(int nPicture) {
         return pictures[nPicture].getThumbnailId();
+    }
+
+    public PictureModel getPicture(int which) {
+        return pictures[which];
     }
 
     /**

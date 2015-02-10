@@ -15,5 +15,8 @@
     <string name="local_name_la_gioconda">Mona Lisa</string>
     <string name="local_name_guernica">Guernica</string>
     <string name="local_name_skrik">The Scream</string>
+    <string name="title_activity_showcase">Painting</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
