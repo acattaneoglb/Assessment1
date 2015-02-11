@@ -5,6 +5,11 @@
     <string name="button_previous">Anterior</string>
     <string name="button_next">Siguiente</string>
 
+    <string name="picture_name_title">Nombre</string>
+    <string name="picture_year_guess">Adivina</string>
+    <string name="picture_year_title">Año</string>
+    <string name="title_activity_showcase">Pintura</string>
+
     <!-- Pictures' local names -->
     <string name="local_name_la_gioconda">La Gioconda</string>
     <string name="local_name_guernica">Guernica</string>

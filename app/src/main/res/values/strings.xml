@@ -6,6 +6,11 @@
     <string name="button_previous">Previous</string>
     <string name="button_next">Next</string>
 
+    <string name="title_activity_showcase">Painting</string>
+    <string name="picture_name_title">Name</string>
+    <string name="picture_year_title">Year</string>
+    <string name="picture_year_guess">Guess</string>
+
     <!-- Pictures' names -->
     <string name="name_la_gioconda" translatable="false">La Gioconda</string>
     <string name="name_guernica" translatable="false">Guernica</string>
@@ -15,8 +20,5 @@
     <string name="local_name_la_gioconda">Mona Lisa</string>
     <string name="local_name_guernica">Guernica</string>
     <string name="local_name_skrik">The Scream</string>
-    <string name="title_activity_showcase">Painting</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
