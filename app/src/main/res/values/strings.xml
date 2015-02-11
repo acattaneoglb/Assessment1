@@ -23,5 +23,15 @@
     <string name="year_its_newer">The picture is newer than that.</string>
     <string name="year_right">That\'s the right year!</string>
     <string name="year_nan">That\'s not a number.</string>
+    <string name="local_name_las_meninas">Las Meninas</string>
+    <string name="name_las_meninas">Las Meninas</string>
+    <string name="local_name_la_persistencia_de_la_memoria">The Persistence of Memory</string>
+    <string name="name_la_persistencia_de_la_memoria">La persistencia de la memoria</string>
+    <string name="local_name_de_sterrennacht">The Starry Night</string>
+    <string name="name_de_sterrennacht">De sterrennacht</string>
+    <string name="local_name_le_fils_de_l_homme">The Son of Man</string>
+    <string name="name_le_fils_de_l_homme">Le fils de l\'homme</string>
+    <string name="local_name_nascita_di_venere">Nascita di Venere</string>
+    <string name="name_nascita_di_venere">The Birth of Venus</string>
 
 </resources>
