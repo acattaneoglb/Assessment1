@@ -45,18 +45,24 @@ public class GalleryActivity extends ActionBarActivity {
         pictures = new PictureModel[3];
 
         pictures[0] = new PictureModel();
-        pictures[0].setName(getResources().getString(R.string.name_la_gioconda));
+        pictures[0].setName(getResources().getString(R.string.local_name_la_gioconda));
+        pictures[0].setOriginalName(getResources().getString(R.string.name_la_gioconda));
         pictures[0].setImageId(R.drawable.la_gioconda);
+        pictures[0].setYear(1506);
         pictures[0].setThumbnailId(R.drawable.t_la_gioconda);
 
         pictures[1] = new PictureModel();
-        pictures[1].setName(getResources().getString(R.string.name_guernica));
+        pictures[1].setName(getResources().getString(R.string.local_name_guernica));
+        pictures[1].setOriginalName(getResources().getString(R.string.name_guernica));
         pictures[1].setImageId(R.drawable.guernica);
+        pictures[1].setYear(1937);
         pictures[1].setThumbnailId(R.drawable.t_guernica);
 
         pictures[2] = new PictureModel();
-        pictures[2].setName(getResources().getString(R.string.name_skrik));
+        pictures[2].setName(getResources().getString(R.string.local_name_skrik));
+        pictures[2].setOriginalName(getResources().getString(R.string.name_skrik));
         pictures[2].setImageId(R.drawable.skrik);
+        pictures[2].setYear(1893);
         pictures[2].setThumbnailId(R.drawable.t_skrik);
 
     }

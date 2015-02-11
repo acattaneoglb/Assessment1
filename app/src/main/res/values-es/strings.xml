@@ -5,7 +5,7 @@
     <string name="button_previous">Anterior</string>
     <string name="button_next">Siguiente</string>
 
-    <string name="picture_name_title">Nombre</string>
+    <string name="picture_original_name_title">Nombre original</string>
     <string name="picture_year_guess">Adivina</string>
     <string name="picture_year_title">Año</string>
     <string name="title_activity_showcase">Pintura</string>

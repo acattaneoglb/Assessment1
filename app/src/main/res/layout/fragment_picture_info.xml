@@ -7,14 +7,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/picture_name_title"
-        android:id="@+id/text_view_name_title" />
+        android:text="@string/picture_original_name_title"
+        android:id="@+id/text_view_original_name_title" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/text_view_name"
+        android:id="@+id/text_view_original_name"
         android:layout_gravity="center_horizontal" />
 
     <TextView

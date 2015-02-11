@@ -1,8 +1,8 @@
 package co.mobilemakers.portfoliopiece;
 
 
-import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +20,13 @@ public class PictureFragment extends Fragment {
     }
 
 
-    private void loadPicture(View view) {
-        ImageView imageView = (ImageView)view.findViewById(R.id.image_view_picture);
-        ShowcaseActivity showcase = (ShowcaseActivity)getActivity();
-        imageView.setImageDrawable(getResources().getDrawable(showcase.getPicture().getImageId()));
+    private void loadPicture() {
+        View view = getView();
+        if (view != null) {
+            ImageView imageView = (ImageView) view.findViewById(R.id.image_view_picture);
+            ShowcaseActivity showcase = (ShowcaseActivity) getActivity();
+            imageView.setImageDrawable(getResources().getDrawable(showcase.getPicture().getImageId()));
+        }
     }
 
     @Override
@@ -37,6 +40,6 @@ public class PictureFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        loadPicture(getView());
+        loadPicture();
     }
 }

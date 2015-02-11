@@ -12,7 +12,11 @@ import android.os.Parcelable;
  */
 public class PictureModel implements Parcelable {
     private String mName = "";
+    private String mOriginalName = "";
     private int mImageId = -1;
+
+    private int mYear = 1981;
+
     private int mThumbnailId = -1;
 
     public static final Creator<PictureModel> CREATOR = new Creator<PictureModel>() {
@@ -26,14 +30,15 @@ public class PictureModel implements Parcelable {
             return new PictureModel[size];
         }
     };
-
     PictureModel() {
 
     }
 
     PictureModel(Parcel source) {
         mName = source.readString();
+        mOriginalName = source.readString();
         mImageId = source.readInt();
+        mYear = source.readInt();
         mThumbnailId = source.readInt();
     }
 
@@ -45,12 +50,28 @@ public class PictureModel implements Parcelable {
         mName = name;
     }
 
+    public String getOriginalName() {
+        return mOriginalName;
+    }
+
+    public void setOriginalName(String name) {
+        mOriginalName = name;
+    }
+
     public int getImageId() {
         return mImageId;
     }
 
     public void setImageId(int imageId) {
         mImageId = imageId;
+    }
+
+    public int getYear() {
+        return mYear;
+    }
+
+    public void setYear(int year) {
+        this.mYear = year;
     }
 
     public int getThumbnailId() {
@@ -69,7 +90,9 @@ public class PictureModel implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(mName);
+        dest.writeString(mOriginalName);
         dest.writeInt(mImageId);
+        dest.writeInt(mYear);
         dest.writeInt(mThumbnailId);
     }
 }

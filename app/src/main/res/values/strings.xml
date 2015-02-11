@@ -5,9 +5,8 @@
     <string name="action_settings">Settings</string>
     <string name="button_previous">Previous</string>
     <string name="button_next">Next</string>
-
     <string name="title_activity_showcase">Painting</string>
-    <string name="picture_name_title">Name</string>
+    <string name="picture_original_name_title">Original name</string>
     <string name="picture_year_title">Year</string>
     <string name="picture_year_guess">Guess</string>
 
@@ -20,5 +19,9 @@
     <string name="local_name_la_gioconda">Mona Lisa</string>
     <string name="local_name_guernica">Guernica</string>
     <string name="local_name_skrik">The Scream</string>
+    <string name="year_its_older">The picture is older than that.</string>
+    <string name="year_its_newer">The picture is newer than that.</string>
+    <string name="year_right">That\'s the right year!</string>
+    <string name="year_nan">That\'s not a number.</string>
 
 </resources>

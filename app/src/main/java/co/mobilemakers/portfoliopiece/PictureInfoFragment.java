@@ -6,6 +6,8 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 /**
@@ -18,13 +20,38 @@ public class PictureInfoFragment extends Fragment {
         // Required empty public constructor
     }
 
+    private void showPictureInfo() {
+        View view = getView();
+        if (view != null) {
+            ShowcaseActivity showcase = (ShowcaseActivity) getActivity();
+
+            TextView textOriginalName = (TextView) view.findViewById(R.id.text_view_original_name);
+            textOriginalName.setText(showcase.getPicture().getOriginalName());
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_picture_info, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_picture_info, container, false);
+
+        Button buttonGuess = (Button)rootView.findViewById(R.id.button_picture_year_guess);
+        buttonGuess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ShowcaseActivity showcase = (ShowcaseActivity) getActivity();
+                showcase.goGuessYear();
+            }
+        });
+
+        return rootView;
     }
 
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
+        showPictureInfo();
+    }
 }
