@@ -18,6 +18,9 @@ public class ShowcaseActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ThemeManagement.setActivityTheme(this);
+
         setContentView(R.layout.activity_showcase);
 
         picture = getIntent().getParcelableExtra(GalleryActivity.EXTRA_PICTURE);

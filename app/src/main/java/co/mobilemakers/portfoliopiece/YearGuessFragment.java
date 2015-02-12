@@ -47,6 +47,10 @@ public class YearGuessFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
+                if (s.toString().isEmpty()) {
+                    textYearInfo.setText(getResources().getString(R.string.come_on));
+                    return;
+                }
                 int guessedYear;
                 try {
                     guessedYear = Integer.valueOf(s.toString());

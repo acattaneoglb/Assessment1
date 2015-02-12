@@ -17,6 +17,15 @@
     <string name="year_right">That\'s the right year!</string>
     <string name="year_nan">That\'s not a number.</string>
 
+    <string name="pref_category_customization">Aspect</string>
+    <string name="pref_color_title">Color theme</string>
+    <string name="pref_color_summary">Choose a color theme (rotate the device to see the changes)</string>
+
+    <string name="louvre">Louvre</string>
+    <string name="orsai">Orsai</string>
+    <string name="prado">Prado</string>
+    <string name="moma">MoMA</string>
+
     <!-- Pictures' names -->
     <string name="name_la_gioconda" translatable="false">La Gioconda</string>
     <string name="name_guernica" translatable="false">Guernica</string>
@@ -36,5 +45,8 @@
     <string name="local_name_de_sterrennacht">The Starry Night</string>
     <string name="local_name_le_fils_de_l_homme">The Son of Man</string>
     <string name="local_name_nascita_di_venere">The Birth of Venus</string>
+    <string name="enter_year_hint">Enter a year</string>
+    <string name="come_on">Come on...</string>
+    <string name="put_some_numbers">Put some numbers</string>
 
 </resources>

@@ -36,14 +36,15 @@ public class PictureInfoFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_picture_info, container, false);
 
+        final ShowcaseActivity showcase = (ShowcaseActivity) getActivity();
         Button buttonGuess = (Button)rootView.findViewById(R.id.button_picture_year_guess);
         buttonGuess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ShowcaseActivity showcase = (ShowcaseActivity) getActivity();
                 showcase.goGuessYear();
             }
         });
+        buttonGuess.setBackgroundDrawable(ThemeManagement.getButtonStyle(showcase));
 
         return rootView;
     }

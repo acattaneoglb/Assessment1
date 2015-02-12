@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/LouvreTheme" >
         <activity
             android:name=".GalleryActivity"
             android:label="@string/app_name" >
@@ -20,6 +20,8 @@
             android:name=".ShowcaseActivity"
             android:label="@string/title_activity_showcase" >
         </activity>
+        <activity android:name=".SettingsActivity"
+            android:label="@string/action_settings"/>
     </application>
 
 </manifest>

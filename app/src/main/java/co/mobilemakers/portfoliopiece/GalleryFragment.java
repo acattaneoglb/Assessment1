@@ -119,8 +119,11 @@ public class GalleryFragment extends Fragment {
         }
 
         ScreenChangeButtonListener screenChangeButtonListener = new ScreenChangeButtonListener();
+        GalleryActivity gallery = (GalleryActivity)getActivity();
         mButtonPrevious.setOnClickListener(screenChangeButtonListener);
+        mButtonPrevious.setBackgroundDrawable(ThemeManagement.getButtonStyle(gallery));
         mButtonNext.setOnClickListener(screenChangeButtonListener);
+        mButtonNext.setBackgroundDrawable(ThemeManagement.getButtonStyle(gallery));
     }
 
     /**

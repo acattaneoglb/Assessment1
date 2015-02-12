@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_options">
+        <item>@string/louvre</item>
+        <item>@string/orsai</item>
+        <item>@string/prado</item>
+        <item>@string/moma</item>
+    </string-array>
+</resources>
