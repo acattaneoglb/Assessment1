@@ -10,10 +10,17 @@
     <string name="picture_original_name_title">Nombre original</string>
     <string name="picture_year_title">Año</string>
     <string name="picture_year_guess">Adivina</string>
+    <string name="enter_year_hint">Ingresa un año</string>
+    <string name="put_some_numbers">Pon algunos números</string>
     <string name="year_its_newer">La pintura es más nueva.</string>
     <string name="year_its_older">La pintura es más vieja.</string>
     <string name="year_nan">Eso no es un número.</string>
     <string name="year_right">¡Es el año correcto!</string>
+    <string name="come_on">Vamos…</string>
+
+    <string name="pref_category_customization">Aspecto</string>
+    <string name="pref_color_title">Tema de colores</string>
+    <string name="pref_color_summary">Elige un tema de colores (gire el dispositivo para ver los cambios)</string>
 
     <!-- Pictures' local names -->
     <string name="local_name_la_gioconda">La Gioconda</string>

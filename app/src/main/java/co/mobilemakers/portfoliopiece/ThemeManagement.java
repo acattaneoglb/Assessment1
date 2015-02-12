@@ -11,6 +11,10 @@ import android.support.v7.app.ActionBarActivity;
  * Created by ariel.cattaneo on 12/02/2015.
  */
 public class ThemeManagement {
+    /**
+     * Sets a color theme to an activity.
+     * @param activity The activity being styled.
+     */
     public static void setActivityTheme(ActionBarActivity activity) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity);
         String colorSet = sharedPreferences.getString("color_preference", activity.getResources().getString(R.string.louvre));
@@ -28,6 +32,11 @@ public class ThemeManagement {
         }
     }
 
+    /**
+     * Returns the button style, corresponding to the chosen color theme
+     * @param activity The parent activity.
+     * @return The button style.
+     */
     public static Drawable getButtonStyle(ActionBarActivity activity) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity);
         String colorSet = sharedPreferences.getString("color_preference", activity.getResources().getString(R.string.louvre));

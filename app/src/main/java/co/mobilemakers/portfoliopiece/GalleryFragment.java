@@ -22,6 +22,9 @@ public class GalleryFragment extends Fragment {
      */
     private final static int PICTURES_BY_SCREEN = 6;
 
+    /**
+     * Key to save the first picture shown between states
+     */
     private final static String KEY_FIRST_PICTURE = "KEY_FIRST_PICTURE";
 
     /**
@@ -61,6 +64,9 @@ public class GalleryFragment extends Fragment {
         }
     }
 
+    /**
+     * Inner class to deal with the Previous and Next buttons
+     */
     private class ScreenChangeButtonListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {

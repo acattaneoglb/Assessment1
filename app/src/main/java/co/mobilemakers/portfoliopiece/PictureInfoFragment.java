@@ -20,6 +20,9 @@ public class PictureInfoFragment extends Fragment {
         // Required empty public constructor
     }
 
+    /**
+     * Shows info corresponding to the picture
+     */
     private void showPictureInfo() {
         View view = getView();
         if (view != null) {

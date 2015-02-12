@@ -10,7 +10,7 @@ import android.preference.PreferenceFragment;
  * Created by ariel.cattaneo on 30/01/2015.
  */
 public class SettingsActivity extends Activity {
-    public static class AppSettingsFragment extends PreferenceFragment {
+    public static class SettingsFragment extends PreferenceFragment {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -23,7 +23,7 @@ public class SettingsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         getFragmentManager().beginTransaction()
-                .replace(R.id.settings, new AppSettingsFragment())
+                .replace(R.id.settings, new SettingsFragment())
                 .commit();
     }
 }

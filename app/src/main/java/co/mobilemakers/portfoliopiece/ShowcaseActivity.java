@@ -1,16 +1,18 @@
 package co.mobilemakers.portfoliopiece;
 
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 
 public class ShowcaseActivity extends ActionBarActivity {
 
     PictureModel picture;
 
+    /**
+     * Returns the chosen picture
+     * @return The picture as an instance of PictureModel
+     */
     public PictureModel getPicture() {
         return picture;
     }
@@ -27,6 +29,9 @@ public class ShowcaseActivity extends ActionBarActivity {
         setTitle(picture.getName());
     }
 
+    /**
+     * Goes to the "year guess" function
+     */
     public void goGuessYear() {
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()

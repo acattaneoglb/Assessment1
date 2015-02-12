@@ -19,7 +19,9 @@ public class PictureFragment extends Fragment {
         // Required empty public constructor
     }
 
-
+    /**
+     * Loads the corresponding picture and shows it
+     */
     private void loadPicture() {
         View view = getView();
         if (view != null) {
