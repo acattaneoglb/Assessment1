@@ -22,6 +22,8 @@ public class GalleryFragment extends Fragment {
      */
     private final static int PICTURES_BY_SCREEN = 6;
 
+    private final static String KEY_FIRST_PICTURE = "KEY_FIRST_PICTURE";
+
     /**
      * Takes account of the first picture showed on screen.
      */
@@ -64,18 +66,9 @@ public class GalleryFragment extends Fragment {
         public void onClick(View v) {
             if (v == mButtonPrevious) {
                 firstPicture -= PICTURES_BY_SCREEN;
-                if (firstPicture == 0) {
-                    mButtonPrevious.setEnabled(false);
-                }
-                mButtonNext.setEnabled(true);
             }
             else {
                 firstPicture += PICTURES_BY_SCREEN;
-                GalleryActivity gallery = (GalleryActivity)getActivity();
-                if (gallery.getPicturesQuantity() - firstPicture <= PICTURES_BY_SCREEN) {
-                    mButtonNext.setEnabled(false);
-                }
-                mButtonPrevious.setEnabled(true);
             }
 
             showPictures();
@@ -144,6 +137,9 @@ public class GalleryFragment extends Fragment {
             }
             posImage++;
         }
+
+        mButtonPrevious.setEnabled(firstPicture != 0);
+        mButtonNext.setEnabled(gallery.getPicturesQuantity() - firstPicture > PICTURES_BY_SCREEN);
     }
 
     @Override
@@ -162,6 +158,17 @@ public class GalleryFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        if (savedInstanceState != null) {
+            firstPicture = savedInstanceState.getInt(KEY_FIRST_PICTURE);
+        }
+
         showPictures();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putInt(KEY_FIRST_PICTURE, firstPicture);
     }
 }
