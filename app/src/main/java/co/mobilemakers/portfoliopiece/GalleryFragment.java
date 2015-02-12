@@ -7,7 +7,9 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 
 /**
@@ -31,6 +33,11 @@ public class GalleryFragment extends Fragment {
     ImageButton mPictures[];
 
     /**
+     * Buttons to change the set of shown pictures.
+     */
+    Button mButtonPrevious, mButtonNext;
+
+    /**
      * Inner class to deal with pictures' clicks
      */
     private class PictureButtonListener implements View.OnClickListener {
@@ -41,9 +48,37 @@ public class GalleryFragment extends Fragment {
             while (v != mPictures[whichPicture]) {
                 whichPicture++;
             }
-            GalleryActivity gallery = (GalleryActivity)getActivity();
-            intent.putExtra(GalleryActivity.EXTRA_PICTURE, gallery.getPicture(whichPicture));
-            startActivity(intent);
+            GalleryActivity gallery = (GalleryActivity) getActivity();
+            if ((firstPicture + whichPicture) < gallery.getPicturesQuantity()) {
+                intent.putExtra(GalleryActivity.EXTRA_PICTURE, gallery.getPicture(whichPicture + firstPicture));
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(getActivity(), R.string.no_picture_here, Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
+    private class ScreenChangeButtonListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            if (v == mButtonPrevious) {
+                firstPicture -= PICTURES_BY_SCREEN;
+                if (firstPicture == 0) {
+                    mButtonPrevious.setEnabled(false);
+                }
+                mButtonNext.setEnabled(true);
+            }
+            else {
+                firstPicture += PICTURES_BY_SCREEN;
+                GalleryActivity gallery = (GalleryActivity)getActivity();
+                if (gallery.getPicturesQuantity() - firstPicture <= PICTURES_BY_SCREEN) {
+                    mButtonNext.setEnabled(false);
+                }
+                mButtonPrevious.setEnabled(true);
+            }
+
+            showPictures();
         }
     }
 
@@ -63,6 +98,14 @@ public class GalleryFragment extends Fragment {
         mPictures[3] = (ImageButton)rootView.findViewById(R.id.image_view_4);
         mPictures[4] = (ImageButton)rootView.findViewById(R.id.image_view_5);
         mPictures[5] = (ImageButton)rootView.findViewById(R.id.image_view_6);
+
+        mButtonPrevious = (Button)rootView.findViewById(R.id.button_previous);
+        mButtonNext = (Button)rootView.findViewById(R.id.button_next);
+
+        GalleryActivity gallery = (GalleryActivity)getActivity();
+        if (gallery.getPicturesQuantity() > PICTURES_BY_SCREEN) {
+            mButtonNext.setEnabled(true);
+        }
     }
 
     /**
@@ -74,6 +117,10 @@ public class GalleryFragment extends Fragment {
         for (ImageButton pictureButton : mPictures) {
             pictureButton.setOnClickListener(pictureButtonListener);
         }
+
+        ScreenChangeButtonListener screenChangeButtonListener = new ScreenChangeButtonListener();
+        mButtonPrevious.setOnClickListener(screenChangeButtonListener);
+        mButtonNext.setOnClickListener(screenChangeButtonListener);
     }
 
     /**
@@ -84,9 +131,14 @@ public class GalleryFragment extends Fragment {
         GalleryActivity gallery = (GalleryActivity)getActivity();
         int imagesCount = gallery.getPicturesQuantity();
 
-        while (posImage < PICTURES_BY_SCREEN && (firstPicture + posImage) < imagesCount) {
-            mPictures[posImage].setImageDrawable(
-                    getResources().getDrawable(gallery.getPictureThumbnailId(firstPicture + posImage)));
+        while (posImage < PICTURES_BY_SCREEN) {
+            if ((firstPicture + posImage) < imagesCount) {
+                mPictures[posImage].setImageDrawable(
+                        getResources().getDrawable(gallery.getPictureThumbnailId(firstPicture + posImage)));
+            }
+            else {
+                mPictures[posImage].setImageDrawable(getResources().getDrawable(R.drawable.empty_frame));
+            }
             posImage++;
         }
     }

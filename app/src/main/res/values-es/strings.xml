@@ -4,15 +4,25 @@
     <string name="action_settings">Preferencias</string>
     <string name="button_previous">Anterior</string>
     <string name="button_next">Siguiente</string>
+    <string name="no_picture_here">No hay pintura aquí. Elija otra.</string>
 
-    <string name="picture_original_name_title">Nombre original</string>
-    <string name="picture_year_guess">Adivina</string>
-    <string name="picture_year_title">Año</string>
     <string name="title_activity_showcase">Pintura</string>
+    <string name="picture_original_name_title">Nombre original</string>
+    <string name="picture_year_title">Año</string>
+    <string name="picture_year_guess">Adivina</string>
+    <string name="year_its_newer">La pintura es más nueva.</string>
+    <string name="year_its_older">La pintura es más vieja.</string>
+    <string name="year_nan">Eso no es un número.</string>
+    <string name="year_right">¡Es el año correcto!</string>
 
     <!-- Pictures' local names -->
     <string name="local_name_la_gioconda">La Gioconda</string>
     <string name="local_name_guernica">Guernica</string>
     <string name="local_name_skrik">El grito</string>
+    <string name="local_name_las_meninas">Las Meninas</string>
+    <string name="local_name_la_persistencia_de_la_memoria">La persistencia de la memoria</string>
+    <string name="local_name_de_sterrennacht">La noche estrellada</string>
+    <string name="local_name_le_fils_de_l_homme">El hijo del Hombre</string>
+    <string name="local_name_nascita_di_venere">El nacimiento de Venus</string>
 
 </resources>

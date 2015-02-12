@@ -3,35 +3,38 @@
 
     <string name="app_name" translatable="false">Portfolio Piece</string>
     <string name="action_settings">Settings</string>
+
+    <string name="no_picture_here">There is no picture here. Choose another.</string>
     <string name="button_previous">Previous</string>
     <string name="button_next">Next</string>
+
     <string name="title_activity_showcase">Painting</string>
     <string name="picture_original_name_title">Original name</string>
     <string name="picture_year_title">Year</string>
     <string name="picture_year_guess">Guess</string>
+    <string name="year_its_older">The picture is older than that.</string>
+    <string name="year_its_newer">The picture is newer than that.</string>
+    <string name="year_right">That\'s the right year!</string>
+    <string name="year_nan">That\'s not a number.</string>
 
     <!-- Pictures' names -->
     <string name="name_la_gioconda" translatable="false">La Gioconda</string>
     <string name="name_guernica" translatable="false">Guernica</string>
     <string name="name_skrik" translatable="false">Skrik</string>
+    <string name="name_las_meninas" translatable="false">Las Meninas</string>
+    <string name="name_la_persistencia_de_la_memoria" translatable="false">La persistencia de la memoria</string>
+    <string name="name_de_sterrennacht" translatable="false">De sterrennacht</string>
+    <string name="name_le_fils_de_l_homme" translatable="false">Le fils de l\'homme</string>
+    <string name="name_nascita_di_venere" translatable="false">Nascita di Venere</string>
 
     <!-- Pictures' local names -->
     <string name="local_name_la_gioconda">Mona Lisa</string>
     <string name="local_name_guernica">Guernica</string>
     <string name="local_name_skrik">The Scream</string>
-    <string name="year_its_older">The picture is older than that.</string>
-    <string name="year_its_newer">The picture is newer than that.</string>
-    <string name="year_right">That\'s the right year!</string>
-    <string name="year_nan">That\'s not a number.</string>
     <string name="local_name_las_meninas">Las Meninas</string>
-    <string name="name_las_meninas">Las Meninas</string>
     <string name="local_name_la_persistencia_de_la_memoria">The Persistence of Memory</string>
-    <string name="name_la_persistencia_de_la_memoria">La persistencia de la memoria</string>
     <string name="local_name_de_sterrennacht">The Starry Night</string>
-    <string name="name_de_sterrennacht">De sterrennacht</string>
     <string name="local_name_le_fils_de_l_homme">The Son of Man</string>
-    <string name="name_le_fils_de_l_homme">Le fils de l\'homme</string>
-    <string name="local_name_nascita_di_venere">Nascita di Venere</string>
-    <string name="name_nascita_di_venere">The Birth of Venus</string>
+    <string name="local_name_nascita_di_venere">The Birth of Venus</string>
 
 </resources>
